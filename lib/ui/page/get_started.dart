@@ -23,7 +23,9 @@ class GetStarted extends StatelessWidget {
                     height: 50,
                     width: 200,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/loginPage');
+                      },
                       child: Text("get started",style: TextStyle(fontSize: 20),),
                     ),
                     decoration: BoxDecoration(
