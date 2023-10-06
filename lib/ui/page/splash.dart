@@ -22,7 +22,7 @@ void initState(){
     return Scaffold(
       body: Container(
 decoration: BoxDecoration(
-  image: DecorationImage(image: AssetImage('assets/splash.png'),fit: BoxFit.cover)
+  image: DecorationImage(image: AssetImage('assets/quick-splash.png'),fit: BoxFit.cover)
 ),
       ),
     );
