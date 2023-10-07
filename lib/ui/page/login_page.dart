@@ -4,9 +4,8 @@ import '../util/util.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-
   @override
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -47,19 +46,24 @@ class LoginPage extends StatelessWidget {
                   children: [
                     TextField(
                       decoration: InputDecoration(
-                        labelText: 'Username',
+                        hintText: 'Username',
+                        alignLabelWithHint: true,
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        hintStyle: const TextStyle()
                       ),
                     ),
                     SizedBox(height: 16),
                     TextField(
                       decoration: InputDecoration(
-                        labelText: 'Password',
+                        hintText: 'Password',
                         filled: true,
                         fillColor: Colors.white,
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)),
                       ),
                       obscureText: true,
                     ),
@@ -68,7 +72,15 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {
                         // Logika untuk proses login
                       },
-                      child: Text('Login'),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          fixedSize: Size(150, 50),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
                     ),
                     SizedBox(height: 10),
                     Text("Don't have an account yet?"),
