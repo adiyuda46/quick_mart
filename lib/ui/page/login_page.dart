@@ -85,7 +85,9 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 10),
                     Text("Don't have an account yet?"),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/register');
+                      },
                       child: Text(
                         "Register Now!",
                         style: TextStyle(color: Colors.white),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ta_mopro/ui/page/get_started.dart';
 import 'package:ta_mopro/ui/page/login_page.dart';
+import 'package:ta_mopro/ui/page/register_page.dart';
 import 'package:ta_mopro/ui/page/splash.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/' : (context) => SplashPage(),
         '/getStart' :(context) => GetStarted(),
         '/loginPage' : (context) => LoginPage(),
+        '/register' : (context) => RegisterPage()
       },
 
     );
