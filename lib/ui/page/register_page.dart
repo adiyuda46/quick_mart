@@ -63,13 +63,15 @@ class RegisterPage extends StatelessWidget {
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10),),
                       ),
                       obscureText: true,
                     ),
                     SizedBox(height: 24),
                     ElevatedButton(
                       onPressed: () {
+                      //  Navigator.pushReplacementNamed(context, '/homePage');
+                        Navigator.pushReplacementNamed(context, '/loginPage');
                         // Logika untuk proses login
                       },
                       child: Text(

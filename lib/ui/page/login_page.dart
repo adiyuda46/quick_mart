@@ -70,6 +70,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 24),
                     ElevatedButton(
                       onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/homePage');
                         // Logika untuk proses login
                       },
                       child: Text(
@@ -80,7 +81,7 @@ class LoginPage extends StatelessWidget {
                           backgroundColor: Colors.black,
                           fixedSize: Size(150, 50),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10),),),
                     ),
                     SizedBox(height: 10),
                     Text("Don't have an account yet?"),
