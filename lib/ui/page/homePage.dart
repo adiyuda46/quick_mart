@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ta_mopro/ui/util/util.dart';
+import 'package:ta_mopro/ui/widget/category.dart';
 import 'package:ta_mopro/ui/widget/search.dart';
 import '../widget/benner.dart';
 
@@ -13,11 +15,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    //  var mediaQuery = MediaQuery.of(context);
-    // var Tinggi = mediaQuery.size.height;
-    // var Lebar = mediaQuery.size.width;
+ final double tinggi = MediaQuery.of(context).size.height;
+    final double lebar = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: PrimaryColor,
         elevation: 0,
         title: Text("Home"),
@@ -37,23 +39,21 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Stack(
+        
         children: [
           Column(
             children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: PrimaryColor,
-                  ),
+              Container(
+                height: tinggi * 0.3,
+                width: lebar,
+                decoration: BoxDecoration(
+                  color: PrimaryColor,
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
+              Container(
+                width: lebar,
+                decoration: BoxDecoration(
+                  color: Colors.red,
                 ),
               ),
             ],
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   height: 150,
-                  width: double.infinity,
+                  width: lebar,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
@@ -85,14 +85,20 @@ class _HomePageState extends State<HomePage> {
                   child: Center(
                     child: Container(
                        height: 50,
-                      width: double.infinity,
+                      width: lebar,
                       child: Search(),
                       decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(10)
                       ),
                      
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Kategori(),
                   ),
                 )
               ],

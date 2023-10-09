@@ -7,41 +7,29 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          color: PrimaryColor,
-          padding: EdgeInsets.symmetric(vertical: 25),
+      body: Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+        color: PrimaryColor,
+        child: SingleChildScrollView(
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 25),
               Container(
-                height: 250,
-                width: 250,
+                height: 350,
+                width: 350,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/keranjang.png'),
+                    image: AssetImage('assets/logo.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              
               Container(
-                padding: EdgeInsets.all(16),
-                child: Center(
-                  child: Text(
-                    "Quick mart",
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 32),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                padding: EdgeInsets.symmetric(horizontal: 41),
                 child: Column(
                   children: [
                     TextField(
@@ -56,7 +44,7 @@ class LoginPage extends StatelessWidget {
                         hintStyle: const TextStyle()
                       ),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 24),
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'Password',
@@ -67,7 +55,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-                    SizedBox(height: 24),
+                    SizedBox(height: 19),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacementNamed(context, '/homePage');
@@ -83,17 +71,18 @@ class LoginPage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),),),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 22),
                     Text("Don't have an account yet?"),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/register');
+                    InkWell(
+                      onTap: () {
+                         Navigator.pushNamed(context, '/register');
                       },
                       child: Text(
                         "Register Now!",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
+                   // SizedBox(height: 10,)
                   ],
                 ),
               ),

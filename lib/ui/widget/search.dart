@@ -13,9 +13,11 @@ class _SearchState extends State<Search> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
-        decoration: InputDecoration(
+        decoration: InputDecoration(          
           hintText: 'Search...',
-          border: InputBorder.none
+          border: InputBorder.none,
+             prefixIcon: Icon(Icons.search), // Ikon sebelum teks input
+     
         ),
       ),
     );
