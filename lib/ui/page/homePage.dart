@@ -4,25 +4,39 @@ import 'package:ta_mopro/ui/util/util.dart';
 import 'package:ta_mopro/ui/widget/category.dart';
 import 'package:ta_mopro/ui/widget/search.dart';
 import '../widget/benner.dart';
+import '../widget/sideBar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+ const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
- final double tinggi = MediaQuery.of(context).size.height;
+    final double tinggi = MediaQuery.of(context).size.height;
     final double lebar = MediaQuery.of(context).size.width;
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: PrimaryColor,
         elevation: 0,
-        title: Text("Home"),
+        title: Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
+            ),
+            Text("Home"),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.favorite_border_outlined),
@@ -38,13 +52,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      drawer: SideBar(),
       body: Stack(
-        
         children: [
           Column(
             children: [
               Container(
-                height: tinggi * 0.3,
+                height: tinggi * 0.28,
                 width: lebar,
                 decoration: BoxDecoration(
                   color: PrimaryColor,
@@ -84,14 +98,13 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Container(
-                       height: 50,
+                      height: 50,
                       width: lebar,
                       child: Search(),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
-                        borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                     
                     ),
                   ),
                 ),
