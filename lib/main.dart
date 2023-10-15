@@ -4,6 +4,7 @@ import 'package:ta_mopro/ui/page/homePage.dart';
 import 'package:ta_mopro/ui/page/login_page.dart';
 import 'package:ta_mopro/ui/page/register_page.dart';
 import 'package:ta_mopro/ui/page/splash.dart';
+import 'package:ta_mopro/ui/widget/sideBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         '/getStart' :(context) => GetStarted(),
         '/loginPage' : (context) => LoginPage(),
         '/register' : (context) => RegisterPage(),
-        '/homePage' :(context) => HomePage()
+        '/homePage' :(context) => HomePage(),
+        '/sideBar' :(context) => SideBar(),
       },
 
     );
